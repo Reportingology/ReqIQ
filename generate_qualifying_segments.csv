@@ -1,1 +1,341 @@
-
+Segment_Type,Cluster_Level,Recruiter,Country,JobGroup,JobFamily,JobLevel,Grouping,Sample_Size,Mean,Std_Dev,Min,Max
+Organization,Cluster_1,All,US,All,All,All,Country,4169,17.27,8.71,0,42
+Organization,Cluster_2,All,US,Business,All,All,Country + JobGroup,3332,17.44,8.64,0,42
+Organization,Cluster_1,All,UK,All,All,All,Country,1916,17.02,8.65,0,42
+Organization,Cluster_2,All,UK,Business,All,All,Country + JobGroup,1537,17.13,8.7,0,42
+Organization,Cluster_3,All,US,Business,Marketing,All,Country + JobGroup + JobFamily,880,17.67,8.71,0,42
+Organization,Cluster_3,All,US,Business,Sales,All,Country + JobGroup + JobFamily,840,17.56,8.75,0,41
+Organization,Cluster_3,All,US,Tech,Engineering,All,Country + JobGroup + JobFamily,837,16.59,8.93,0,42
+Organization,Cluster_2,All,US,Tech,All,All,Country + JobGroup,837,16.59,8.93,0,42
+Organization,Cluster_3,All,US,Business,HR,All,Country + JobGroup + JobFamily,815,17.32,8.51,0,41
+Organization,Cluster_3,All,US,Business,Finance,All,Country + JobGroup + JobFamily,797,17.17,8.6,0,41
+Organization,Cluster_1,All,Germany,All,All,All,Country,541,17.3,9.0,0,42
+Organization,Cluster_2,All,Germany,Business,All,All,Country + JobGroup,442,17.41,9.08,1,42
+Organization,Cluster_3,All,UK,Business,HR,All,Country + JobGroup + JobFamily,398,17.28,8.74,1,42
+Organization,Cluster_3,All,UK,Business,Marketing,All,Country + JobGroup + JobFamily,390,17.19,8.57,0,38
+Organization,Cluster_3,All,UK,Business,Sales,All,Country + JobGroup + JobFamily,390,16.89,8.87,0,41
+Organization,Cluster_3,All,UK,Tech,Engineering,All,Country + JobGroup + JobFamily,379,16.59,8.46,1,39
+Organization,Cluster_2,All,UK,Tech,All,All,Country + JobGroup,379,16.59,8.46,1,39
+Organization,Cluster_3,All,UK,Business,Finance,All,Country + JobGroup + JobFamily,359,17.14,8.63,0,37
+Organization,Cluster_4,All,US,Business,Marketing,Entry,Country + JobGroup + JobFamily + JobLevel,343,17.56,8.91,0,42
+Organization,Cluster_4,All,US,Business,HR,Senior,Country + JobGroup + JobFamily + JobLevel,325,17.06,8.68,0,41
+Organization,Cluster_4,All,US,Business,Sales,Mid,Country + JobGroup + JobFamily + JobLevel,313,18.29,8.7,0,40
+Organization,Cluster_4,All,US,Business,Marketing,Senior,Country + JobGroup + JobFamily + JobLevel,293,16.82,8.14,0,42
+Organization,Cluster_4,All,US,Tech,Engineering,Mid,Country + JobGroup + JobFamily + JobLevel,290,17.01,9.28,1,42
+Organization,Cluster_4,All,US,Business,Finance,Senior,Country + JobGroup + JobFamily + JobLevel,284,16.99,8.72,0,40
+Organization,Cluster_4,All,US,Tech,Engineering,Senior,Country + JobGroup + JobFamily + JobLevel,275,16.45,8.72,1,36
+Organization,Cluster_4,All,US,Tech,Engineering,Entry,Country + JobGroup + JobFamily + JobLevel,272,16.3,8.77,0,37
+Organization,Cluster_4,All,US,Business,Finance,Entry,Country + JobGroup + JobFamily + JobLevel,266,17.67,8.63,1,41
+Organization,Cluster_4,All,US,Business,Sales,Senior,Country + JobGroup + JobFamily + JobLevel,264,17.21,8.31,0,41
+Organization,Cluster_4,All,US,Business,Sales,Entry,Country + JobGroup + JobFamily + JobLevel,263,17.03,9.2,0,41
+Organization,Cluster_4,All,US,Business,HR,Entry,Country + JobGroup + JobFamily + JobLevel,259,17.69,8.04,1,37
+Organization,Cluster_4,All,US,Business,Finance,Mid,Country + JobGroup + JobFamily + JobLevel,247,16.83,8.43,1,37
+Organization,Cluster_4,All,US,Business,Marketing,Mid,Country + JobGroup + JobFamily + JobLevel,244,18.85,9.01,0,42
+Organization,Cluster_4,All,US,Business,HR,Mid,Country + JobGroup + JobFamily + JobLevel,231,17.27,8.8,0,40
+Organization,Cluster_4,All,UK,Business,HR,Senior,Country + JobGroup + JobFamily + JobLevel,146,18.04,8.71,2,40
+Organization,Cluster_4,All,UK,Tech,Engineering,Senior,Country + JobGroup + JobFamily + JobLevel,142,15.93,7.8,1,36
+Organization,Cluster_4,All,UK,Business,Sales,Entry,Country + JobGroup + JobFamily + JobLevel,139,17.12,9.49,0,41
+Organization,Cluster_4,All,UK,Business,Marketing,Entry,Country + JobGroup + JobFamily + JobLevel,135,17.73,8.8,0,36
+Organization,Cluster_4,All,UK,Business,HR,Mid,Country + JobGroup + JobFamily + JobLevel,131,17.37,9.02,1,42
+Organization,Cluster_4,All,UK,Business,Marketing,Senior,Country + JobGroup + JobFamily + JobLevel,130,16.65,8.18,0,38
+Organization,Cluster_1,All,India,All,All,All,Country,130,17.11,7.53,2,33
+Organization,Cluster_3,All,Germany,Business,Finance,All,Country + JobGroup + JobFamily,129,17.1,9.0,1,42
+Organization,Cluster_4,All,UK,Business,Sales,Senior,Country + JobGroup + JobFamily + JobLevel,127,17.08,8.43,1,38
+Organization,Cluster_4,All,UK,Business,Marketing,Mid,Country + JobGroup + JobFamily + JobLevel,125,17.17,8.74,1,37
+Organization,Cluster_4,All,UK,Business,Sales,Mid,Country + JobGroup + JobFamily + JobLevel,124,16.45,8.65,1,36
+Organization,Cluster_4,All,UK,Tech,Engineering,Mid,Country + JobGroup + JobFamily + JobLevel,124,16.73,9.38,1,39
+Organization,Cluster_4,All,UK,Business,Finance,Entry,Country + JobGroup + JobFamily + JobLevel,122,16.32,8.85,1,37
+Organization,Cluster_4,All,UK,Business,Finance,Senior,Country + JobGroup + JobFamily + JobLevel,121,17.26,8.65,0,37
+Organization,Cluster_4,All,UK,Business,HR,Entry,Country + JobGroup + JobFamily + JobLevel,121,16.28,8.44,2,39
+Organization,Cluster_4,All,UK,Business,Finance,Mid,Country + JobGroup + JobFamily + JobLevel,116,17.89,8.37,1,37
+Organization,Cluster_4,All,UK,Tech,Engineering,Entry,Country + JobGroup + JobFamily + JobLevel,113,17.27,8.22,1,37
+Organization,Cluster_3,All,Germany,Business,Sales,All,Country + JobGroup + JobFamily,110,17.27,8.52,3,38
+Organization,Cluster_3,All,Germany,Business,Marketing,All,Country + JobGroup + JobFamily,106,18.41,8.89,3,37
+Organization,Cluster_2,All,India,Business,All,All,Country + JobGroup,105,17.04,7.55,3,33
+Organization,Cluster_3,All,Germany,Tech,Engineering,All,Country + JobGroup + JobFamily,99,16.81,8.68,0,39
+Organization,Cluster_2,All,Germany,Tech,All,All,Country + JobGroup,99,16.81,8.68,0,39
+Organization,Cluster_3,All,Germany,Business,HR,All,Country + JobGroup + JobFamily,97,16.9,10.01,1,42
+Organization,Cluster_4,All,Germany,Business,Finance,Entry,Country + JobGroup + JobFamily + JobLevel,50,16.38,9.21,1,39
+Organization,Cluster_4,All,Germany,Business,Finance,Senior,Country + JobGroup + JobFamily + JobLevel,44,15.34,9.61,2,42
+Organization,Cluster_4,All,Germany,Business,HR,Senior,Country + JobGroup + JobFamily + JobLevel,42,16.55,10.32,1,42
+Organization,Cluster_4,All,Germany,Business,Sales,Mid,Country + JobGroup + JobFamily + JobLevel,41,17.78,7.56,4,32
+Organization,Cluster_4,All,Germany,Business,Sales,Senior,Country + JobGroup + JobFamily + JobLevel,40,17.82,9.41,3,38
+Organization,Cluster_4,All,Germany,Business,Marketing,Entry,Country + JobGroup + JobFamily + JobLevel,38,17.74,8.19,5,33
+Organization,Cluster_4,All,Germany,Business,Marketing,Mid,Country + JobGroup + JobFamily + JobLevel,37,18.22,9.82,3,37
+Organization,Cluster_4,All,Germany,Tech,Engineering,Entry,Country + JobGroup + JobFamily + JobLevel,37,15.38,8.75,0,36
+Organization,Cluster_4,All,Germany,Business,Finance,Mid,Country + JobGroup + JobFamily + JobLevel,35,20.34,7.1,3,37
+Organization,Cluster_4,All,Germany,Business,HR,Mid,Country + JobGroup + JobFamily + JobLevel,35,17.17,8.97,1,33
+Organization,Cluster_4,All,Germany,Tech,Engineering,Mid,Country + JobGroup + JobFamily + JobLevel,34,19.44,8.28,3,39
+Organization,Cluster_4,All,Germany,Business,Marketing,Senior,Country + JobGroup + JobFamily + JobLevel,31,19.45,8.76,3,32
+Recruiter,Cluster_2,Kevin,US,All,All,All,Recruiter + Country,373,17.3,8.86,0,40
+Recruiter,Cluster_1,Kevin,All,All,All,All,Recruiter,373,17.3,8.86,0,40
+Recruiter,Cluster_2,Crystal,US,All,All,All,Recruiter + Country,303,16.86,8.67,0,37
+Recruiter,Cluster_1,Crystal,All,All,All,All,Recruiter,303,16.86,8.67,0,37
+Recruiter,Cluster_2,Lauren,US,All,All,All,Recruiter + Country,290,17.52,9.01,1,42
+Recruiter,Cluster_1,Lauren,All,All,All,All,Recruiter,290,17.52,9.01,1,42
+Recruiter,Cluster_3,Kevin,US,Business,All,All,Recruiter + Country + JobGroup,278,17.69,8.71,0,40
+Recruiter,Cluster_1,Rachael,All,All,All,All,Recruiter,272,16.33,8.18,0,42
+Recruiter,Cluster_2,Anthony,US,All,All,All,Recruiter + Country,270,16.61,8.75,0,42
+Recruiter,Cluster_1,Anthony,All,All,All,All,Recruiter,270,16.61,8.75,0,42
+Recruiter,Cluster_2,Denise,US,All,All,All,Recruiter + Country,268,16.46,7.78,1,38
+Recruiter,Cluster_1,Denise,All,All,All,All,Recruiter,268,16.46,7.78,1,38
+Recruiter,Cluster_3,Crystal,US,Business,All,All,Recruiter + Country + JobGroup,248,17.17,8.7,0,37
+Recruiter,Cluster_3,Lauren,US,Business,All,All,Recruiter + Country + JobGroup,242,17.77,8.75,1,42
+Recruiter,Cluster_3,Anthony,US,Business,All,All,Recruiter + Country + JobGroup,222,16.52,8.64,0,40
+Recruiter,Cluster_3,Denise,US,Business,All,All,Recruiter + Country + JobGroup,209,17.11,7.64,1,38
+Recruiter,Cluster_2,Rachael,UK,All,All,All,Recruiter + Country,208,15.9,7.89,0,38
+Recruiter,Cluster_2,James,US,All,All,All,Recruiter + Country,196,18.35,8.81,0,41
+Recruiter,Cluster_1,James,All,All,All,All,Recruiter,196,18.35,8.81,0,41
+Recruiter,Cluster_1,Amanda,All,All,All,All,Recruiter,187,17.34,9.44,1,41
+Recruiter,Cluster_2,Richard,US,All,All,All,Recruiter + Country,180,18.02,8.84,1,41
+Recruiter,Cluster_1,Richard,All,All,All,All,Recruiter,180,18.02,8.84,1,41
+Recruiter,Cluster_3,Rachael,UK,Business,All,All,Recruiter + Country + JobGroup,177,16.04,8.02,0,38
+Recruiter,Cluster_3,James,US,Business,All,All,Recruiter + Country + JobGroup,153,18.16,8.52,0,41
+Recruiter,Cluster_1,Toni,All,All,All,All,Recruiter,150,17.17,8.79,0,39
+Recruiter,Cluster_2,Amanda,UK,All,All,All,Recruiter + Country,147,16.92,9.3,1,41
+Recruiter,Cluster_2,Lisa,US,All,All,All,Recruiter + Country,146,17.72,8.24,1,39
+Recruiter,Cluster_1,Lisa,All,All,All,All,Recruiter,146,17.72,8.24,1,39
+Recruiter,Cluster_3,Richard,US,Business,All,All,Recruiter + Country + JobGroup,144,17.94,9.04,1,41
+Recruiter,Cluster_2,Mary,US,All,All,All,Recruiter + Country,136,16.6,8.66,0,38
+Recruiter,Cluster_1,Mary,All,All,All,All,Recruiter,136,16.6,8.66,0,38
+Recruiter,Cluster_3,Lisa,US,Business,All,All,Recruiter + Country + JobGroup,122,17.86,8.28,1,39
+Recruiter,Cluster_2,Toni,UK,All,All,All,Recruiter + Country,118,17.69,8.99,1,39
+Recruiter,Cluster_3,Amanda,UK,Business,All,All,Recruiter + Country + JobGroup,116,17.17,9.81,1,41
+Recruiter,Cluster_3,Mary,US,Business,All,All,Recruiter + Country + JobGroup,110,15.94,8.61,0,38
+Recruiter,Cluster_2,Megan,US,All,All,All,Recruiter + Country,110,17.05,8.93,1,34
+Recruiter,Cluster_1,Megan,All,All,All,All,Recruiter,110,17.05,8.93,1,34
+Recruiter,Cluster_3,Toni,UK,Business,All,All,Recruiter + Country + JobGroup,108,17.94,9.11,1,39
+Recruiter,Cluster_1,Susan,All,All,All,All,Recruiter,104,16.37,8.29,1,35
+Recruiter,Cluster_2,Angela,US,All,All,All,Recruiter + Country,101,17.78,9.11,0,41
+Recruiter,Cluster_1,Angela,All,All,All,All,Recruiter,101,17.78,9.11,0,41
+Recruiter,Cluster_1,Timothy,All,All,All,All,Recruiter,101,18.47,8.74,2,38
+Recruiter,Cluster_1,Steven,All,All,All,All,Recruiter,96,16.2,8.51,2,33
+Recruiter,Cluster_4,Kevin,US,Tech,Engineering,All,Recruiter + Country + JobGroup + JobFamily,95,16.18,9.25,0,35
+Recruiter,Cluster_3,Kevin,US,Tech,All,All,Recruiter + Country + JobGroup,95,16.18,9.25,0,35
+Recruiter,Cluster_4,Kevin,US,Business,Sales,All,Recruiter + Country + JobGroup + JobFamily,90,18.74,9.16,1,40
+Recruiter,Cluster_3,Angela,US,Business,All,All,Recruiter + Country + JobGroup,84,18.19,9.22,0,41
+Recruiter,Cluster_2,Susan,UK,All,All,All,Recruiter + Country,82,16.74,8.36,1,35
+Recruiter,Cluster_1,John,All,All,All,All,Recruiter,81,17.65,8.8,1,37
+Recruiter,Cluster_1,Roy,All,All,All,All,Recruiter,81,17.75,8.49,2,36
+Recruiter,Cluster_2,Timothy,UK,All,All,All,Recruiter + Country,81,18.43,8.71,2,38
+Recruiter,Cluster_3,Megan,US,Business,All,All,Recruiter + Country + JobGroup,80,17.62,8.84,1,34
+Recruiter,Cluster_1,Michael,All,All,All,All,Recruiter,76,19.66,8.91,3,40
+Recruiter,Cluster_2,Benjamin,US,All,All,All,Recruiter + Country,76,17.47,7.57,2,40
+Recruiter,Cluster_1,Benjamin,All,All,All,All,Recruiter,76,17.47,7.57,2,40
+Recruiter,Cluster_4,Kevin,US,Business,Finance,All,Recruiter + Country + JobGroup + JobFamily,73,16.22,8.37,1,35
+Recruiter,Cluster_4,Anthony,US,Business,Marketing,All,Recruiter + Country + JobGroup + JobFamily,71,16.23,8.51,1,40
+Recruiter,Cluster_4,Crystal,US,Business,Finance,All,Recruiter + Country + JobGroup + JobFamily,71,17.77,8.46,1,34
+Recruiter,Cluster_2,John,UK,All,All,All,Recruiter + Country,70,18.1,8.82,1,37
+Recruiter,Cluster_4,Crystal,US,Business,Sales,All,Recruiter + Country + JobGroup + JobFamily,69,16.99,9.02,0,34
+Recruiter,Cluster_4,Lauren,US,Business,HR,All,Recruiter + Country + JobGroup + JobFamily,69,17.7,8.91,2,41
+Recruiter,Cluster_3,Timothy,UK,Business,All,All,Recruiter + Country + JobGroup,69,17.59,8.64,2,38
+Recruiter,Cluster_2,Steven,UK,All,All,All,Recruiter + Country,68,15.19,8.22,2,33
+Recruiter,Cluster_1,Allison,All,All,All,All,Recruiter,66,17.82,9.19,2,42
+Recruiter,Cluster_4,Kevin,US,Business,Marketing,All,Recruiter + Country + JobGroup + JobFamily,65,19.05,9.01,1,38
+Recruiter,Cluster_3,Susan,UK,Business,All,All,Recruiter + Country + JobGroup,65,16.65,8.77,1,35
+Recruiter,Cluster_2,Rachael,Germany,All,All,All,Recruiter + Country,64,17.75,8.97,3,42
+Recruiter,Cluster_2,Michael,UK,All,All,All,Recruiter + Country,64,19.67,8.71,3,40
+Recruiter,Cluster_2,Patrick,US,All,All,All,Recruiter + Country,64,16.89,9.26,1,39
+Recruiter,Cluster_1,Patrick,All,All,All,All,Recruiter,64,16.89,9.26,1,39
+Recruiter,Cluster_2,Roy,UK,All,All,All,Recruiter + Country,64,17.92,8.64,2,36
+Recruiter,Cluster_1,Travis,All,All,All,All,Recruiter,63,16.52,8.5,0,35
+Recruiter,Cluster_4,Crystal,US,Business,HR,All,Recruiter + Country + JobGroup + JobFamily,62,17.18,9.0,0,37
+Recruiter,Cluster_4,Lauren,US,Business,Sales,All,Recruiter + Country + JobGroup + JobFamily,61,18.03,9.14,2,38
+Recruiter,Cluster_3,Benjamin,US,Business,All,All,Recruiter + Country + JobGroup,61,17.59,7.45,5,40
+Recruiter,Cluster_4,Denise,US,Tech,Engineering,All,Recruiter + Country + JobGroup + JobFamily,59,14.17,7.92,1,33
+Recruiter,Cluster_3,Denise,US,Tech,All,All,Recruiter + Country + JobGroup,59,14.17,7.92,1,33
+Recruiter,Cluster_2,Sarah,US,All,All,All,Recruiter + Country,59,16.85,9.08,1,38
+Recruiter,Cluster_1,Sarah,All,All,All,All,Recruiter,59,16.85,9.08,1,38
+Recruiter,Cluster_4,Lauren,US,Business,Finance,All,Recruiter + Country + JobGroup + JobFamily,58,15.07,6.91,1,31
+Recruiter,Cluster_2,Heather,US,All,All,All,Recruiter + Country,57,17.77,8.48,4,40
+Recruiter,Cluster_1,Heather,All,All,All,All,Recruiter,57,17.77,8.48,4,40
+Recruiter,Cluster_2,Laura,US,All,All,All,Recruiter + Country,57,16.56,9.85,2,40
+Recruiter,Cluster_1,Laura,All,All,All,All,Recruiter,57,16.56,9.85,2,40
+Recruiter,Cluster_2,Stephanie,US,All,All,All,Recruiter + Country,57,17.63,8.77,2,35
+Recruiter,Cluster_1,Stephanie,All,All,All,All,Recruiter,57,17.63,8.77,2,35
+Recruiter,Cluster_1,Amber,All,All,All,All,Recruiter,57,17.79,9.26,3,38
+Recruiter,Cluster_3,Steven,UK,Business,All,All,Recruiter + Country + JobGroup,56,15.21,8.18,2,33
+Recruiter,Cluster_2,Aaron,US,All,All,All,Recruiter + Country,56,17.98,7.99,2,36
+Recruiter,Cluster_1,Aaron,All,All,All,All,Recruiter,56,17.98,7.99,2,36
+Recruiter,Cluster_4,Crystal,US,Tech,Engineering,All,Recruiter + Country + JobGroup + JobFamily,55,15.45,8.44,1,31
+Recruiter,Cluster_3,Crystal,US,Tech,All,All,Recruiter + Country + JobGroup,55,15.45,8.44,1,31
+Recruiter,Cluster_2,Rebecca,US,All,All,All,Recruiter + Country,55,19.16,8.35,3,33
+Recruiter,Cluster_1,Rebecca,All,All,All,All,Recruiter,55,19.16,8.35,3,33
+Recruiter,Cluster_3,Rachael,Germany,Business,All,All,Recruiter + Country + JobGroup,54,16.96,8.89,3,42
+Recruiter,Cluster_4,Anthony,US,Business,HR,All,Recruiter + Country + JobGroup + JobFamily,54,16.72,8.67,1,32
+Recruiter,Cluster_4,Denise,US,Business,HR,All,Recruiter + Country + JobGroup + JobFamily,54,17.39,7.62,4,38
+Recruiter,Cluster_4,Denise,US,Business,Sales,All,Recruiter + Country + JobGroup + JobFamily,54,16.67,7.49,2,35
+Recruiter,Cluster_2,Natalie,US,All,All,All,Recruiter + Country,54,17.09,9.06,3,40
+Recruiter,Cluster_1,Natalie,All,All,All,All,Recruiter,54,17.09,9.06,3,40
+Recruiter,Cluster_2,Sean,US,All,All,All,Recruiter + Country,54,18.74,9.71,2,41
+Recruiter,Cluster_1,Sean,All,All,All,All,Recruiter,54,18.74,9.71,2,41
+Recruiter,Cluster_4,Lauren,US,Business,Marketing,All,Recruiter + Country + JobGroup + JobFamily,54,20.46,9.23,4,42
+Recruiter,Cluster_2,Derek,US,All,All,All,Recruiter + Country,54,15.43,9.2,2,36
+Recruiter,Cluster_1,Derek,All,All,All,All,Recruiter,54,15.43,9.2,2,36
+Recruiter,Cluster_3,Roy,UK,Business,All,All,Recruiter + Country + JobGroup,54,18.39,8.57,2,36
+Recruiter,Cluster_2,Marcus,US,All,All,All,Recruiter + Country,54,17.85,8.36,3,40
+Recruiter,Cluster_1,Marcus,All,All,All,All,Recruiter,54,17.85,8.36,3,40
+Recruiter,Cluster_3,Aaron,US,Business,All,All,Recruiter + Country + JobGroup,53,17.55,7.86,2,36
+Recruiter,Cluster_4,Denise,US,Business,Marketing,All,Recruiter + Country + JobGroup + JobFamily,52,17.42,8.01,2,36
+Recruiter,Cluster_2,Joel,US,All,All,All,Recruiter + Country,52,17.35,8.21,0,32
+Recruiter,Cluster_1,Joel,All,All,All,All,Recruiter,52,17.35,8.21,0,32
+Recruiter,Cluster_4,Anthony,US,Business,Sales,All,Recruiter + Country + JobGroup + JobFamily,51,15.76,8.65,0,36
+Recruiter,Cluster_1,Chelsea,All,All,All,All,Recruiter,51,20.04,9.36,1,37
+Recruiter,Cluster_3,Patrick,US,Business,All,All,Recruiter + Country + JobGroup,51,16.35,9.0,1,39
+Recruiter,Cluster_2,Paul,US,All,All,All,Recruiter + Country,51,17.51,8.49,3,37
+Recruiter,Cluster_1,Paul,All,All,All,All,Recruiter,51,17.51,8.49,3,37
+Recruiter,Cluster_4,Kevin,US,Business,HR,All,Recruiter + Country + JobGroup + JobFamily,50,16.16,7.54,0,32
+Recruiter,Cluster_2,Gregory,US,All,All,All,Recruiter + Country,50,16.3,8.26,1,33
+Recruiter,Cluster_1,Gregory,All,All,All,All,Recruiter,50,16.3,8.26,1,33
+Recruiter,Cluster_2,Allison,UK,All,All,All,Recruiter + Country,50,17.78,8.79,2,42
+Recruiter,Cluster_1,Jennifer,All,All,All,All,Recruiter,50,16.1,8.23,1,36
+Recruiter,Cluster_1,Jason,All,All,All,All,Recruiter,49,13.88,7.97,2,30
+Recruiter,Cluster_4,Rachael,UK,Business,Sales,All,Recruiter + Country + JobGroup + JobFamily,49,17.45,7.69,2,33
+Recruiter,Cluster_4,Denise,US,Business,Finance,All,Recruiter + Country + JobGroup + JobFamily,49,16.94,7.63,1,32
+Recruiter,Cluster_3,Stephanie,US,Business,All,All,Recruiter + Country + JobGroup,49,16.73,8.81,2,35
+Recruiter,Cluster_2,Kaitlyn,US,All,All,All,Recruiter + Country,49,17.78,9.89,1,42
+Recruiter,Cluster_1,Kaitlyn,All,All,All,All,Recruiter,49,17.78,9.89,1,42
+Recruiter,Cluster_2,Andrew,US,All,All,All,Recruiter + Country,49,17.71,7.68,3,38
+Recruiter,Cluster_1,Andrew,All,All,All,All,Recruiter,49,17.71,7.68,3,38
+Recruiter,Cluster_4,Anthony,US,Tech,Engineering,All,Recruiter + Country + JobGroup + JobFamily,48,17.04,9.28,1,42
+Recruiter,Cluster_3,Anthony,US,Tech,All,All,Recruiter + Country + JobGroup,48,17.04,9.28,1,42
+Recruiter,Cluster_1,Bryan,All,All,All,All,Recruiter,48,17.56,8.23,0,36
+Recruiter,Cluster_3,John,UK,Business,All,All,Recruiter + Country + JobGroup,48,18.58,8.61,1,37
+Recruiter,Cluster_2,Travis,UK,All,All,All,Recruiter + Country,48,17.04,7.81,2,35
+Recruiter,Cluster_4,Lauren,US,Tech,Engineering,All,Recruiter + Country + JobGroup + JobFamily,48,16.29,10.24,1,36
+Recruiter,Cluster_3,Lauren,US,Tech,All,All,Recruiter + Country + JobGroup,48,16.29,10.24,1,36
+Recruiter,Cluster_1,Thomas,All,All,All,All,Recruiter,48,15.04,8.1,1,39
+Recruiter,Cluster_2,Shannon,US,All,All,All,Recruiter + Country,48,14.88,8.83,0,31
+Recruiter,Cluster_1,Shannon,All,All,All,All,Recruiter,48,14.88,8.83,0,31
+Recruiter,Cluster_1,David,All,All,All,All,Recruiter,48,16.04,8.91,1,36
+Recruiter,Cluster_4,Rachael,UK,Business,Marketing,All,Recruiter + Country + JobGroup + JobFamily,47,16.19,7.52,4,33
+Recruiter,Cluster_3,Heather,US,Business,All,All,Recruiter + Country + JobGroup,47,18.02,8.7,4,40
+Recruiter,Cluster_4,Richard,US,Business,HR,All,Recruiter + Country + JobGroup + JobFamily,47,17.36,9.72,1,41
+Recruiter,Cluster_2,Michelle,US,All,All,All,Recruiter + Country,47,18.26,9.17,2,37
+Recruiter,Cluster_1,Michelle,All,All,All,All,Recruiter,47,18.26,9.17,2,37
+Recruiter,Cluster_1,Wesley,All,All,All,All,Recruiter,47,16.98,10.32,1,36
+Recruiter,Cluster_1,Kristen,All,All,All,All,Recruiter,47,17.81,8.2,1,39
+Recruiter,Cluster_2,Catherine,India,All,All,All,Recruiter + Country,47,17.17,7.54,3,33
+Recruiter,Cluster_1,Catherine,All,All,All,All,Recruiter,47,17.17,7.54,3,33
+Recruiter,Cluster_3,Rebecca,US,Business,All,All,Recruiter + Country + JobGroup,47,18.83,8.5,3,33
+Recruiter,Cluster_4,Anthony,US,Business,Finance,All,Recruiter + Country + JobGroup + JobFamily,46,17.57,9.0,3,40
+Recruiter,Cluster_4,Crystal,US,Business,Marketing,All,Recruiter + Country + JobGroup + JobFamily,46,16.5,8.41,0,35
+Recruiter,Cluster_2,Molly,US,All,All,All,Recruiter + Country,46,18.22,7.93,1,36
+Recruiter,Cluster_1,Molly,All,All,All,All,Recruiter,46,18.22,7.93,1,36
+Recruiter,Cluster_3,Sarah,US,Business,All,All,Recruiter + Country + JobGroup,46,17.07,8.93,4,38
+Recruiter,Cluster_2,Monica,US,All,All,All,Recruiter + Country,46,16.0,9.62,2,38
+Recruiter,Cluster_1,Monica,All,All,All,All,Recruiter,46,16.0,9.62,2,38
+Recruiter,Cluster_1,Diana,All,All,All,All,Recruiter,46,16.85,9.07,2,42
+Recruiter,Cluster_3,Michael,UK,Business,All,All,Recruiter + Country + JobGroup,45,19.29,8.77,3,40
+Recruiter,Cluster_2,Robert,US,All,All,All,Recruiter + Country,45,17.87,8.87,0,35
+Recruiter,Cluster_1,Robert,All,All,All,All,Recruiter,45,17.87,8.87,0,35
+Recruiter,Cluster_3,Derek,US,Business,All,All,Recruiter + Country + JobGroup,45,16.47,9.15,3,36
+Recruiter,Cluster_3,Michelle,US,Business,All,All,Recruiter + Country + JobGroup,45,18.53,9.28,2,37
+Recruiter,Cluster_2,Julie,US,All,All,All,Recruiter + Country,45,17.2,9.01,2,36
+Recruiter,Cluster_1,Julie,All,All,All,All,Recruiter,45,17.2,9.01,2,36
+Recruiter,Cluster_3,Natalie,US,Business,All,All,Recruiter + Country + JobGroup,44,18.34,9.09,3,40
+Recruiter,Cluster_2,Mark,US,All,All,All,Recruiter + Country,44,18.18,7.93,2,35
+Recruiter,Cluster_1,Mark,All,All,All,All,Recruiter,44,18.18,7.93,2,35
+Recruiter,Cluster_3,Kaitlyn,US,Business,All,All,Recruiter + Country + JobGroup,44,17.07,9.87,1,42
+Recruiter,Cluster_4,Rachael,UK,Business,Finance,All,Recruiter + Country + JobGroup + JobFamily,43,13.3,8.46,0,34
+Recruiter,Cluster_4,James,US,Tech,Engineering,All,Recruiter + Country + JobGroup + JobFamily,43,19.02,9.85,2,35
+Recruiter,Cluster_3,James,US,Tech,All,All,Recruiter + Country + JobGroup,43,19.02,9.85,2,35
+Recruiter,Cluster_2,Jessica,US,All,All,All,Recruiter + Country,43,17.3,8.99,1,41
+Recruiter,Cluster_1,Jessica,All,All,All,All,Recruiter,43,17.3,8.99,1,41
+Recruiter,Cluster_2,Amy,US,All,All,All,Recruiter + Country,43,17.47,9.2,1,37
+Recruiter,Cluster_1,Amy,All,All,All,All,Recruiter,43,17.47,9.2,1,37
+Recruiter,Cluster_3,Allison,UK,Business,All,All,Recruiter + Country + JobGroup,43,17.81,8.83,2,42
+Recruiter,Cluster_4,James,US,Business,Marketing,All,Recruiter + Country + JobGroup + JobFamily,41,17.56,8.0,4,34
+Recruiter,Cluster_2,Bryan,UK,All,All,All,Recruiter + Country,41,17.63,8.54,0,36
+Recruiter,Cluster_2,Eric,US,All,All,All,Recruiter + Country,41,17.07,8.89,1,39
+Recruiter,Cluster_1,Eric,All,All,All,All,Recruiter,41,17.07,8.89,1,39
+Recruiter,Cluster_1,Sabrina,All,All,All,All,Recruiter,41,16.51,8.22,2,33
+Recruiter,Cluster_3,Marcus,US,Business,All,All,Recruiter + Country + JobGroup,41,18.39,8.72,3,40
+Recruiter,Cluster_2,Christopher,US,All,All,All,Recruiter + Country,41,16.12,8.74,3,33
+Recruiter,Cluster_1,Christopher,All,All,All,All,Recruiter,41,16.12,8.74,3,33
+Recruiter,Cluster_2,Amanda,Germany,All,All,All,Recruiter + Country,40,18.9,9.9,1,37
+Recruiter,Cluster_4,James,US,Business,Finance,All,Recruiter + Country + JobGroup + JobFamily,40,18.08,7.96,5,34
+Recruiter,Cluster_4,James,US,Business,Sales,All,Recruiter + Country + JobGroup + JobFamily,40,19.0,9.88,2,41
+Recruiter,Cluster_3,Joel,US,Business,All,All,Recruiter + Country + JobGroup,40,17.32,7.65,1,32
+Recruiter,Cluster_3,Travis,UK,Business,All,All,Recruiter + Country + JobGroup,40,17.58,7.83,2,35
+Recruiter,Cluster_3,Robert,US,Business,All,All,Recruiter + Country + JobGroup,40,18.08,9.13,0,35
+Recruiter,Cluster_2,Veronica,India,All,All,All,Recruiter + Country,40,17.3,7.37,3,33
+Recruiter,Cluster_1,Veronica,All,All,All,All,Recruiter,40,17.3,7.37,3,33
+Recruiter,Cluster_4,Mary,US,Business,Marketing,All,Recruiter + Country + JobGroup + JobFamily,40,17.32,9.2,1,34
+Recruiter,Cluster_3,Julie,US,Business,All,All,Recruiter + Country + JobGroup,40,16.7,9.17,2,36
+Recruiter,Cluster_2,Thomas,UK,All,All,All,Recruiter + Country,39,15.33,8.17,1,39
+Recruiter,Cluster_3,Shannon,US,Business,All,All,Recruiter + Country + JobGroup,39,14.62,8.84,0,31
+Recruiter,Cluster_3,Veronica,India,Business,All,All,Recruiter + Country + JobGroup,39,17.21,7.44,3,33
+Recruiter,Cluster_2,Amber,UK,All,All,All,Recruiter + Country,39,17.41,9.63,3,38
+Recruiter,Cluster_3,Gregory,US,Business,All,All,Recruiter + Country + JobGroup,39,17.18,8.62,1,33
+Recruiter,Cluster_3,Andrew,US,Business,All,All,Recruiter + Country + JobGroup,39,19.38,7.45,5,38
+Recruiter,Cluster_4,Rachael,UK,Business,HR,All,Recruiter + Country + JobGroup + JobFamily,38,17.13,8.08,3,38
+Recruiter,Cluster_5,Kevin,US,Business,Finance,Mid,Recruiter + Country + JobGroup + JobFamily + JobLevel,38,16.63,8.1,1,32
+Recruiter,Cluster_5,Kevin,US,Business,Sales,Mid,Recruiter + Country + JobGroup + JobFamily + JobLevel,38,16.53,10.48,1,40
+Recruiter,Cluster_2,Jennifer,UK,All,All,All,Recruiter + Country,38,15.82,8.45,1,36
+Recruiter,Cluster_2,David,UK,All,All,All,Recruiter + Country,38,15.61,9.33,1,36
+Recruiter,Cluster_2,Jason,UK,All,All,All,Recruiter + Country,37,14.03,8.38,2,30
+Recruiter,Cluster_4,Amanda,UK,Business,Finance,All,Recruiter + Country + JobGroup + JobFamily,37,17.46,9.89,1,34
+Recruiter,Cluster_5,Anthony,US,Business,Marketing,Senior,Recruiter + Country + JobGroup + JobFamily + JobLevel,37,14.97,7.64,1,32
+Recruiter,Cluster_2,Chelsea,UK,All,All,All,Recruiter + Country,37,19.59,9.43,1,37
+Recruiter,Cluster_3,Sean,US,Business,All,All,Recruiter + Country + JobGroup,37,20.46,9.6,3,41
+Recruiter,Cluster_1,Melissa,All,All,All,All,Recruiter,37,19.59,8.23,0,33
+Recruiter,Cluster_3,Laura,US,Business,All,All,Recruiter + Country + JobGroup,37,16.43,10.04,2,40
+Recruiter,Cluster_4,Lisa,US,Business,HR,All,Recruiter + Country + JobGroup + JobFamily,37,17.65,7.53,3,31
+Recruiter,Cluster_3,Paul,US,Business,All,All,Recruiter + Country + JobGroup,37,19.62,8.27,5,37
+Recruiter,Cluster_2,Caitlin,US,All,All,All,Recruiter + Country,37,15.08,8.89,2,35
+Recruiter,Cluster_1,Caitlin,All,All,All,All,Recruiter,37,15.08,8.89,2,35
+Recruiter,Cluster_1,Jasmine,All,All,All,All,Recruiter,36,13.92,6.78,2,33
+Recruiter,Cluster_5,Kevin,US,Tech,Engineering,Entry,Recruiter + Country + JobGroup + JobFamily + JobLevel,36,13.86,8.62,0,28
+Recruiter,Cluster_4,Richard,US,Tech,Engineering,All,Recruiter + Country + JobGroup + JobFamily,36,18.31,8.06,5,34
+Recruiter,Cluster_3,Richard,US,Tech,All,All,Recruiter + Country + JobGroup,36,18.31,8.06,5,34
+Recruiter,Cluster_3,Mark,US,Business,All,All,Recruiter + Country + JobGroup,36,18.31,8.1,2,35
+Recruiter,Cluster_2,Wesley,UK,All,All,All,Recruiter + Country,36,17.83,10.05,1,36
+Recruiter,Cluster_3,Amy,US,Business,All,All,Recruiter + Country + JobGroup,36,18.0,9.34,1,37
+Recruiter,Cluster_1,Adam,All,All,All,All,Recruiter,36,18.86,8.48,5,38
+Recruiter,Cluster_3,Amanda,Germany,Business,All,All,Recruiter + Country + JobGroup,35,18.26,9.73,1,37
+Recruiter,Cluster_5,Kevin,US,Business,Marketing,Mid,Recruiter + Country + JobGroup + JobFamily + JobLevel,35,20.8,7.97,5,36
+Recruiter,Cluster_1,Kelly,All,All,All,All,Recruiter,35,16.17,8.54,3,35
+Recruiter,Cluster_3,Monica,US,Business,All,All,Recruiter + Country + JobGroup,35,15.94,9.64,2,38
+Recruiter,Cluster_1,Renee,All,All,All,All,Recruiter,35,16.0,9.95,2,36
+Recruiter,Cluster_4,Richard,US,Business,Finance,All,Recruiter + Country + JobGroup + JobFamily,34,18.76,8.15,3,36
+Recruiter,Cluster_2,Kimberly,US,All,All,All,Recruiter + Country,34,20.06,8.62,1,32
+Recruiter,Cluster_1,Kimberly,All,All,All,All,Recruiter,34,20.06,8.62,1,32
+Recruiter,Cluster_2,Paige,US,All,All,All,Recruiter + Country,33,16.3,8.61,4,40
+Recruiter,Cluster_1,Paige,All,All,All,All,Recruiter,33,16.3,8.61,4,40
+Recruiter,Cluster_3,Jessica,US,Business,All,All,Recruiter + Country + JobGroup,33,17.55,8.75,1,41
+Recruiter,Cluster_2,Joseph,US,All,All,All,Recruiter + Country,33,19.18,7.56,1,31
+Recruiter,Cluster_1,Joseph,All,All,All,All,Recruiter,33,19.18,7.56,1,31
+Recruiter,Cluster_4,Lisa,US,Business,Sales,All,Recruiter + Country + JobGroup + JobFamily,33,18.09,8.33,2,37
+Recruiter,Cluster_4,Mary,US,Business,HR,All,Recruiter + Country + JobGroup + JobFamily,33,14.7,7.89,0,32
+Recruiter,Cluster_3,Christopher,US,Business,All,All,Recruiter + Country + JobGroup,33,14.94,7.81,3,28
+Recruiter,Cluster_5,Kevin,US,Tech,Engineering,Senior,Recruiter + Country + JobGroup + JobFamily + JobLevel,32,17.12,8.87,2,33
+Recruiter,Cluster_4,James,US,Business,HR,All,Recruiter + Country + JobGroup + JobFamily,32,17.97,8.33,0,37
+Recruiter,Cluster_4,Richard,US,Business,Marketing,All,Recruiter + Country + JobGroup + JobFamily,32,16.75,8.45,1,34
+Recruiter,Cluster_3,Bryan,UK,Business,All,All,Recruiter + Country + JobGroup,32,18.31,8.68,0,36
+Recruiter,Cluster_5,Crystal,US,Business,Finance,Senior,Recruiter + Country + JobGroup + JobFamily + JobLevel,32,17.59,9.73,1,34
+Recruiter,Cluster_3,Molly,US,Business,All,All,Recruiter + Country + JobGroup,32,19.72,7.35,6,36
+Recruiter,Cluster_3,Amber,UK,Business,All,All,Recruiter + Country + JobGroup,32,16.62,9.49,3,38
+Recruiter,Cluster_2,Toni,Germany,All,All,All,Recruiter + Country,32,15.25,7.81,0,26
+Recruiter,Cluster_3,Kimberly,US,Business,All,All,Recruiter + Country + JobGroup,32,19.38,8.42,1,32
+Recruiter,Cluster_4,Amanda,UK,Tech,Engineering,All,Recruiter + Country + JobGroup + JobFamily,31,15.97,7.15,1,29
+Recruiter,Cluster_3,Amanda,UK,Tech,All,All,Recruiter + Country + JobGroup,31,15.97,7.15,1,29
+Recruiter,Cluster_4,Rachael,UK,Tech,Engineering,All,Recruiter + Country + JobGroup + JobFamily,31,15.1,7.18,1,35
+Recruiter,Cluster_3,Rachael,UK,Tech,All,All,Recruiter + Country + JobGroup,31,15.1,7.18,1,35
+Recruiter,Cluster_4,Richard,US,Business,Sales,All,Recruiter + Country + JobGroup + JobFamily,31,19.16,9.67,1,40
+Recruiter,Cluster_4,Angela,US,Business,Marketing,All,Recruiter + Country + JobGroup + JobFamily,31,17.16,10.22,0,38
+Recruiter,Cluster_5,Crystal,US,Business,HR,Senior,Recruiter + Country + JobGroup + JobFamily + JobLevel,31,17.35,8.83,1,33
+Recruiter,Cluster_1,Zachary,All,All,All,All,Recruiter,31,16.9,8.53,2,33
+Recruiter,Cluster_3,Catherine,India,Business,All,All,Recruiter + Country + JobGroup,31,16.32,7.29,3,28
+Recruiter,Cluster_1,Peter,All,All,All,All,Recruiter,31,16.77,8.59,1,32
+Recruiter,Cluster_2,Renee,UK,All,All,All,Recruiter + Country,31,16.0,10.19,2,36
+Recruiter,Cluster_3,Jennifer,UK,Business,All,All,Recruiter + Country + JobGroup,31,16.1,8.68,1,36
+Recruiter,Cluster_2,Holly,US,All,All,All,Recruiter + Country,31,16.03,9.39,3,41
+Recruiter,Cluster_1,Holly,All,All,All,All,Recruiter,31,16.03,9.39,3,41
+Recruiter,Cluster_2,Diana,UK,All,All,All,Recruiter + Country,31,15.68,7.96,2,30
+Recruiter,Cluster_3,Paige,US,Business,All,All,Recruiter + Country + JobGroup,30,17.27,8.41,4,40
+Recruiter,Cluster_2,Sabrina,UK,All,All,All,Recruiter + Country,30,16.93,7.79,2,30
+Recruiter,Cluster_3,Chelsea,UK,Business,All,All,Recruiter + Country + JobGroup,30,19.83,9.39,1,37
+Recruiter,Cluster_5,Lauren,US,Business,Marketing,Entry,Recruiter + Country + JobGroup + JobFamily + JobLevel,30,21.77,9.84,6,42
+Recruiter,Cluster_4,Megan,US,Tech,Engineering,All,Recruiter + Country + JobGroup + JobFamily,30,15.53,9.15,1,34
+Recruiter,Cluster_3,Megan,US,Tech,All,All,Recruiter + Country + JobGroup,30,15.53,9.15,1,34
