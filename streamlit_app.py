@@ -248,7 +248,7 @@ def main():
     
     # Metric selection (placeholder for future expansion to Core 4 metrics)
     st.subheader("Metric Selection")
-    metric_column = st.selectbox("Select Metric", ["DaysToFirstScreen"])
+    metric_column = st.selectbox("Select Metric", ["DaysToFirst Screen"])
     
     # Analysis button
     if st.button("Generate All Qualifying Sample Populations"):
