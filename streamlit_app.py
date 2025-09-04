@@ -2,17 +2,18 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from typing import List, Dict
-import itertools
+import re
 
 # Set up the page configuration - this must be the first Streamlit command
 st.set_page_config(page_title="RequisitionIQ", layout="wide")
 
 # Title and description
 st.title("RequisitionIQ - Requisition Intelligence Engine")
-st.write("Generate all qualifying sample populations (n>=30) for recruiter and org segments")
+st.write("Generate all qualifying sample populations (n>=30) for recruiter and org segments using most recent 30 requisitions")
 
 # Constants - these define our clustering hierarchy and minimum sample size
 MIN_SAMPLE_SIZE = 30  # Minimum number of records needed for statistical validity
+RECENT_REQ_LIMIT = 30  # Only use most recent 30 requisitions per sample
 GITHUB_CSV_URL = "https://raw.githubusercontent.com/Reportingology/ReqIQ/09c4c7426249be40171b37cce2c2e2a75fde39e0/filled_requisitions.csv"
 
 @st.cache_data  # This decorator caches the data so we don't reload it every time
@@ -34,9 +35,50 @@ def load_data(url: str) -> pd.DataFrame:
         st.error(f"Error loading data: {str(e)}")
         return pd.DataFrame()
 
+def extract_req_number(req_id: str) -> int:
+    """
+    Extract numeric part from RequisitionID for sorting by recency.
+    
+    Args:
+        req_id: RequisitionID string (e.g., 'RIQ-6757')
+        
+    Returns:
+        Integer part of the requisition ID
+    """
+    try:
+        # Extract numbers from the RequisitionID
+        numbers = re.findall(r'\d+', str(req_id))
+        if numbers:
+            return int(numbers[-1])  # Take the last number found
+        return 0
+    except:
+        return 0
+
+def get_most_recent_reqs(df: pd.DataFrame, limit: int = RECENT_REQ_LIMIT) -> pd.DataFrame:
+    """
+    Filter dataframe to only include the most recent requisitions based on RequisitionID numbers.
+    
+    Args:
+        df: DataFrame with requisition data
+        limit: Maximum number of recent requisitions to include
+        
+    Returns:
+        DataFrame filtered to most recent requisitions
+    """
+    # Add a numeric column for sorting
+    df_copy = df.copy()
+    df_copy['req_number'] = df_copy['RequisitionID'].apply(extract_req_number)
+    
+    # Sort by req_number descending (most recent first) and take top N
+    df_sorted = df_copy.sort_values('req_number', ascending=False)
+    recent_df = df_sorted.head(limit)
+    
+    # Remove the helper column and return
+    return recent_df.drop('req_number', axis=1)
+
 def calculate_statistics(df: pd.DataFrame, metric_column: str) -> Dict:
     """
-    Calculate mean, standard deviation, and other statistics for a metric.
+    Calculate basic statistics for a metric.
     
     Args:
         df: DataFrame with the sample population
@@ -65,6 +107,7 @@ def calculate_statistics(df: pd.DataFrame, metric_column: str) -> Dict:
 def generate_all_recruiter_segments(df: pd.DataFrame, metric_column: str) -> List[Dict]:
     """
     Generate ALL qualifying recruiter segments using linear backoff fallback.
+    Uses only the most recent 30 requisitions for each sample population.
     
     Args:
         df: Full dataset of filled requisitions
@@ -75,11 +118,11 @@ def generate_all_recruiter_segments(df: pd.DataFrame, metric_column: str) -> Lis
     """
     # Define cluster hierarchy from most specific to least specific
     cluster_hierarchy = [
-        ['Recruiter', 'Country', 'JobGroup', 'JobFamily', 'JobLevel'],  # Cluster 5
-        ['Recruiter', 'Country', 'JobGroup', 'JobFamily'],              # Cluster 4
-        ['Recruiter', 'Country', 'JobGroup'],                           # Cluster 3
-        ['Recruiter', 'Country'],                                       # Cluster 2
-        ['Recruiter']                                                   # Cluster 1
+        (['Recruiter', 'Country', 'JobGroup', 'JobFamily', 'JobLevel'], 'Cluster_5'),
+        (['Recruiter', 'Country', 'JobGroup', 'JobFamily'], 'Cluster_4'),
+        (['Recruiter', 'Country', 'JobGroup'], 'Cluster_3'),
+        (['Recruiter', 'Country'], 'Cluster_2'),
+        (['Recruiter'], 'Cluster_1')
     ]
     
     qualifying_segments = []
@@ -87,40 +130,75 @@ def generate_all_recruiter_segments(df: pd.DataFrame, metric_column: str) -> Lis
     # Get all unique recruiters
     recruiters = df['Recruiter'].unique()
     
-    # For each recruiter, find their best qualifying cluster
+    # For each recruiter, find their best qualifying cluster using linear backoff
     for recruiter in recruiters:
         recruiter_data = df[df['Recruiter'] == recruiter].copy()
+        found_qualifying_cluster = False
         
-        # Try each cluster level for this recruiter
-        for cluster_level, grouping_columns in enumerate(cluster_hierarchy, 1):
+        # Try each cluster level for this recruiter (most specific first)
+        for grouping_columns, cluster_name in cluster_hierarchy:
             
-            # For recruiter segments, we need to check if this recruiter has enough
-            # records when grouped by the specified columns
-            if len(grouping_columns) == 1:  # Just recruiter
-                sample_size = len(recruiter_data)
-                sample_data = recruiter_data
+            if found_qualifying_cluster:
+                break  # Already found qualifying cluster for this recruiter
+            
+            if len(grouping_columns) == 1:  # Just recruiter (Cluster 1)
+                # Get most recent requisitions for this recruiter
+                recent_data = get_most_recent_reqs(recruiter_data, RECENT_REQ_LIMIT)
+                sample_size = len(recent_data)
+                
+                if sample_size >= MIN_SAMPLE_SIZE:
+                    stats = calculate_statistics(recent_data, metric_column)
+                    
+                    if 'error' not in stats:
+                        segment_info = {
+                            'Segment_Type': 'Recruiter',
+                            'Cluster_Level': cluster_name,
+                            'Recruiter': recruiter,
+                            'Country': 'All',
+                            'JobGroup': 'All', 
+                            'JobFamily': 'All',
+                            'JobLevel': 'All',
+                            'Grouping': ' + '.join(grouping_columns),
+                            'Sample_Size': stats['count'],
+                            'Mean': round(stats['mean'], 2),
+                            'Std_Dev': round(stats['std'], 2),
+                            'Min': stats['min'],
+                            'Max': stats['max']
+                        }
+                        qualifying_segments.append(segment_info)
+                        found_qualifying_cluster = True
             else:
-                # Group by all columns and check each group
-                grouped = recruiter_data.groupby(grouping_columns)
+                # Group by all columns and check if we get qualifying samples
+                grouped = recruiter_data.groupby(grouping_columns[1:])  # Skip 'Recruiter' since we already filtered
                 
                 # Check each group within this recruiter's data
                 for group_values, group_data in grouped:
-                    sample_size = len(group_data)
+                    # Get most recent requisitions for this group
+                    recent_data = get_most_recent_reqs(group_data, RECENT_REQ_LIMIT)
+                    sample_size = len(recent_data)
                     
                     if sample_size >= MIN_SAMPLE_SIZE:
-                        # Calculate statistics for this qualifying group
-                        stats = calculate_statistics(group_data, metric_column)
+                        stats = calculate_statistics(recent_data, metric_column)
                         
                         if 'error' not in stats:
-                            # Create row for results table
+                            # Handle single value vs tuple for group_values
+                            if not isinstance(group_values, tuple):
+                                group_values = (group_values,)
+                            
+                            # Map group values to columns
+                            country = group_values[0] if len(group_values) > 0 else 'All'
+                            job_group = group_values[1] if len(group_values) > 1 else 'All'
+                            job_family = group_values[2] if len(group_values) > 2 else 'All'
+                            job_level = group_values[3] if len(group_values) > 3 else 'All'
+                            
                             segment_info = {
                                 'Segment_Type': 'Recruiter',
-                                'Cluster_Level': f'Cluster_{6-cluster_level}',  # Reverse numbering
+                                'Cluster_Level': cluster_name,
                                 'Recruiter': recruiter,
-                                'Country': group_values[1] if len(group_values) > 1 else 'All',
-                                'JobGroup': group_values[2] if len(group_values) > 2 else 'All',
-                                'JobFamily': group_values[3] if len(group_values) > 3 else 'All',
-                                'JobLevel': group_values[4] if len(group_values) > 4 else 'All',
+                                'Country': country,
+                                'JobGroup': job_group,
+                                'JobFamily': job_family,
+                                'JobLevel': job_level,
                                 'Grouping': ' + '.join(grouping_columns),
                                 'Sample_Size': stats['count'],
                                 'Mean': round(stats['mean'], 2),
@@ -129,35 +207,15 @@ def generate_all_recruiter_segments(df: pd.DataFrame, metric_column: str) -> Lis
                                 'Max': stats['max']
                             }
                             qualifying_segments.append(segment_info)
-                continue
-            
-            # Handle the single recruiter case (Cluster 1)
-            if len(grouping_columns) == 1 and sample_size >= MIN_SAMPLE_SIZE:
-                stats = calculate_statistics(sample_data, metric_column)
-                
-                if 'error' not in stats:
-                    segment_info = {
-                        'Segment_Type': 'Recruiter',
-                        'Cluster_Level': 'Cluster_1',
-                        'Recruiter': recruiter,
-                        'Country': 'All',
-                        'JobGroup': 'All', 
-                        'JobFamily': 'All',
-                        'JobLevel': 'All',
-                        'Grouping': 'Recruiter',
-                        'Sample_Size': stats['count'],
-                        'Mean': round(stats['mean'], 2),
-                        'Std_Dev': round(stats['std'], 2),
-                        'Min': stats['min'],
-                        'Max': stats['max']
-                    }
-                    qualifying_segments.append(segment_info)
+                            found_qualifying_cluster = True
+                            break  # Take first qualifying cluster at this level
     
     return qualifying_segments
 
 def generate_all_org_segments(df: pd.DataFrame, metric_column: str) -> List[Dict]:
     """
     Generate ALL qualifying organization segments using linear backoff fallback.
+    Uses only the most recent 30 requisitions for each sample population.
     
     Args:
         df: Full dataset of filled requisitions  
@@ -168,30 +226,31 @@ def generate_all_org_segments(df: pd.DataFrame, metric_column: str) -> List[Dict
     """
     # Define org cluster hierarchy (no recruiter column)
     cluster_hierarchy = [
-        ['Country', 'JobGroup', 'JobFamily', 'JobLevel'],   # Cluster 4
-        ['Country', 'JobGroup', 'JobFamily'],               # Cluster 3  
-        ['Country', 'JobGroup'],                            # Cluster 2
-        ['Country']                                         # Cluster 1
+        (['Country', 'JobGroup', 'JobFamily', 'JobLevel'], 'Cluster_4'),
+        (['Country', 'JobGroup', 'JobFamily'], 'Cluster_3'),  
+        (['Country', 'JobGroup'], 'Cluster_2'),
+        (['Country'], 'Cluster_1')
     ]
     
     qualifying_segments = []
     
     # For each cluster level, find all qualifying combinations
-    for cluster_level, grouping_columns in enumerate(cluster_hierarchy, 1):
+    for grouping_columns, cluster_name in cluster_hierarchy:
         
         # Group data by the current cluster columns
         grouped = df.groupby(grouping_columns)
         
         # Check each group to see if it qualifies
         for group_values, group_data in grouped:
-            sample_size = len(group_data)
+            # Get most recent requisitions for this group
+            recent_data = get_most_recent_reqs(group_data, RECENT_REQ_LIMIT)
+            sample_size = len(recent_data)
             
             if sample_size >= MIN_SAMPLE_SIZE:
                 # Calculate statistics for this qualifying group
-                stats = calculate_statistics(group_data, metric_column)
+                stats = calculate_statistics(recent_data, metric_column)
                 
                 if 'error' not in stats:
-                    # Create row for results table
                     # Handle single value vs tuple for group_values
                     if isinstance(group_values, tuple):
                         country = group_values[0]
@@ -207,7 +266,7 @@ def generate_all_org_segments(df: pd.DataFrame, metric_column: str) -> List[Dict
                     
                     segment_info = {
                         'Segment_Type': 'Organization',
-                        'Cluster_Level': f'Cluster_{5-cluster_level}',  # Reverse numbering for org
+                        'Cluster_Level': cluster_name,
                         'Recruiter': 'All',
                         'Country': country,
                         'JobGroup': job_group,
@@ -253,20 +312,20 @@ def main():
     # Analysis button
     if st.button("Generate All Qualifying Sample Populations"):
         
-        st.subheader("Qualifying Sample Populations (n >= 30)")
+        st.subheader("Qualifying Sample Populations (n >= 30, Recent 30 Reqs)")
         
         # Add some debugging info first
         st.write("**Debug Info:**")
         st.write(f"- Total records: {len(df)}")
         st.write(f"- Unique recruiters: {df['Recruiter'].nunique()}")
-        st.write(f"- Records per recruiter (avg): {len(df) / df['Recruiter'].nunique():.1f}")
-        st.write(f"- Available columns: {list(df.columns)}")
+        st.write(f"- Using most recent {RECENT_REQ_LIMIT} requisitions per sample")
         
         # Check if the metric column exists and has valid data
         if metric_column in df.columns:
             valid_metric_data = df[metric_column].dropna()
             st.write(f"- Valid {metric_column} records: {len(valid_metric_data)} / {len(df)}")
-            st.write(f"- {metric_column} range: {valid_metric_data.min():.1f} to {valid_metric_data.max():.1f}")
+            if len(valid_metric_data) > 0:
+                st.write(f"- {metric_column} range: {valid_metric_data.min():.1f} to {valid_metric_data.max():.1f}")
         else:
             st.error(f"Column '{metric_column}' not found in data!")
             return
@@ -311,22 +370,6 @@ def main():
                 mime="text/csv"
             )
             
-            # Show some summary insights
-            with st.expander("Summary Insights"):
-                st.write("**Recruiter Segment Insights:**")
-                if recruiter_segments:
-                    recruiter_df = pd.DataFrame(recruiter_segments)
-                    st.write(f"- Average sample size: {recruiter_df['Sample_Size'].mean():.0f}")
-                    st.write(f"- Largest sample: {recruiter_df['Sample_Size'].max()}")
-                    st.write(f"- Most common cluster level: {recruiter_df['Cluster_Level'].mode().iloc[0]}")
-                
-                st.write("**Organization Segment Insights:**")
-                if org_segments:
-                    org_df = pd.DataFrame(org_segments)
-                    st.write(f"- Average sample size: {org_df['Sample_Size'].mean():.0f}")
-                    st.write(f"- Largest sample: {org_df['Sample_Size'].max()}")
-                    st.write(f"- Most common cluster level: {org_df['Cluster_Level'].mode().iloc[0]}")
-        
         else:
             st.error("No qualifying segments found (all potential clusters have n < 30)")
 
