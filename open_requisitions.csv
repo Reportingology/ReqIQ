@@ -1,10 +1,10 @@
-RequisitionID,Recruiter,Country,JobGroup,JobFamily,JobLevel,RequisitionOpenedDate,DaysToFirst Screen,DateFirstScreen,,,,,,
-RIQ-6757,Kevin,US,Tech,Engineering,Senior,7/29/2025,15,8/13/2025,,,,,,
-RIQ-6758,Kevin,US,Tech,Engineering,Entry,8/8/2025,8,8/16/2025,,,,,,
-RIQ-6759,Jason,US,Tech,Engineering,Mid,9/4/2025,0,9/4/2025,,,,,,
-RIQ-6760,Sarah,UK,Business,HR,Senior,9/4/2025,0,9/4/2025,,,,,,
-RIQ-6761,Sarah,US,Business,HR,Senior,6/1/2025,,,,,,,,
-RIQ-6762,Christine,US,Business,Sales,Senior,8/14/2025,,,,,,,,
-RIQ-6763,Chelsea,Germany,Business,HR,Mid,8/18/2025,3,8/21/2025,,,,,,
-RIQ-6764,Natalie,US,Business,Marketing,Entry,8/3/2025,11,8/14/2025,,,,,,
-RIQ-6765,Sean,US,Business,Marketing,Senior,6/3/2025,,,,,,,,
+RequisitionID,Recruiter,Country,JobGroup,JobFamily,JobLevel,RequisitionOpenedDate,DaysToFirst Screen,DateFirstScreen
+RIQ-6757,Kevin,US,Tech,Engineering,Senior,7/29/2025,15,8/13/2025
+RIQ-6758,Kevin,US,Tech,Engineering,Entry,8/8/2025,8,8/16/2025
+RIQ-6759,Jason,US,Tech,Engineering,Mid,9/4/2025,0,9/4/2025
+RIQ-6760,Sarah,UK,Business,HR,Senior,9/4/2025,0,9/4/2025
+RIQ-6761,Sarah,US,Business,HR,Senior,6/1/2025,,
+RIQ-6762,Christine,US,Business,Sales,Senior,8/14/2025,,
+RIQ-6763,Chelsea,Germany,Business,HR,Mid,8/18/2025,3,8/21/2025
+RIQ-6764,Natalie,US,Business,Marketing,Entry,8/3/2025,11,8/14/2025
+RIQ-6765,Sean,US,Business,Marketing,Senior,6/3/2025,,
