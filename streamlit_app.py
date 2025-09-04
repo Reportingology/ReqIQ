@@ -255,13 +255,33 @@ def main():
         
         st.subheader("Qualifying Sample Populations (n >= 30)")
         
+        # Add some debugging info first
+        st.write("**Debug Info:**")
+        st.write(f"- Total records: {len(df)}")
+        st.write(f"- Unique recruiters: {df['Recruiter'].nunique()}")
+        st.write(f"- Records per recruiter (avg): {len(df) / df['Recruiter'].nunique():.1f}")
+        st.write(f"- Available columns: {list(df.columns)}")
+        
+        # Check if the metric column exists and has valid data
+        if metric_column in df.columns:
+            valid_metric_data = df[metric_column].dropna()
+            st.write(f"- Valid {metric_column} records: {len(valid_metric_data)} / {len(df)}")
+            st.write(f"- {metric_column} range: {valid_metric_data.min():.1f} to {valid_metric_data.max():.1f}")
+        else:
+            st.error(f"Column '{metric_column}' not found in data!")
+            return
+        
         with st.spinner("Analyzing all recruiter segments..."):
             # Generate all qualifying recruiter segments
             recruiter_segments = generate_all_recruiter_segments(df, metric_column)
         
+        st.write(f"Found {len(recruiter_segments)} qualifying recruiter segments")
+        
         with st.spinner("Analyzing all organization segments..."):
             # Generate all qualifying org segments  
             org_segments = generate_all_org_segments(df, metric_column)
+            
+        st.write(f"Found {len(org_segments)} qualifying organization segments")
         
         # Combine all segments into one table
         all_segments = recruiter_segments + org_segments
