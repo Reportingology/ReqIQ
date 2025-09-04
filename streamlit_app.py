@@ -9,7 +9,7 @@ st.title("RequisitionIQ - Statistical Engine")
 # Constants
 GITHUB_CSV_URL = "https://raw.githubusercontent.com/Reportingology/ReqIQ/09c4c7426249be40171b37cce2c2e2a75fde39e0/filled_requisitions.csv"
 SEGMENTS_CSV_URL = "https://raw.githubusercontent.com/Reportingology/ReqIQ/main/generate_qualifying_segments.csv"
-OPEN_REQS_URL = https://github.com/Reportingology/ReqIQ/blob/cac1dabf2f14e7ca8cd228d891f236318cdcb1ae/open_requisitions.csv"
+OPEN_REQS_URL = "https://github.com/Reportingology/ReqIQ/blob/cac1dabf2f14e7ca8cd228d891f236318cdcb1ae/open_requisitions.csv"
 
 @st.cache_data
 def load_data(url: str) -> pd.DataFrame:
