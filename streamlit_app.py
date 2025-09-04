@@ -218,7 +218,11 @@ def generate_all_org_segments(df: pd.DataFrame, metric_column: str) -> List[Dict
                         'Mean': round(stats['mean'], 2),
                         'Std_Dev': round(stats['std'], 2),
                         'Min': stats['min'],
-                        'Max': stats['max']
+                        'Q1': round(stats['q1'], 2),
+                        'Median': round(stats['median'], 2),
+                        'Q3': round(stats['q3'], 2),
+                        'Max': stats['max'],
+                        'IQR': round(stats['iqr'], 2)
                     }
                     qualifying_segments.append(segment_info)
     
